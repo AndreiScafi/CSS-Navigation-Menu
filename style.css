@@ -28,11 +28,20 @@ html {
     margin-right: 4rem;
 }
 
+.follow {
+    pointer-events: auto;
+}
+
 .menu {
     display: flex;
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
+    pointer-events: none;
+}
+
+.menu:hover {
+    pointer-events: auto;
 }
 
 .line {
@@ -40,6 +49,13 @@ html {
     height: .1rem;
     margin-right: 5rem;
     position: relative;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform .5s;
+}
+
+.menu:hover .line {
+    transform: scale(1);
 }
 
 .line::after {
@@ -57,4 +73,31 @@ html {
 .menu-link {
     text-decoration: none;
     position: relative;
+    top: 5rem;
+    opacity: 0;
+}
+
+.menu:hover .menu-link {
+    opacity: 1;
+    top: 0;
+}
+
+.menu-link:nth-child(1) {
+    transition: all .5s .2s;
+}
+
+.menu-link:nth-child(2) {
+    transition: all .5s .2s;
+}
+
+.menu-link:nth-child(3) {
+    transition: all .5s .3s;
+}
+
+.menu-link:nth-child(4) {
+    transition: all .5s .4s;
+}
+
+.menu-link:nth-child(5) {
+    transition: all .5s .5s;
 }
